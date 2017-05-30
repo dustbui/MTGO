@@ -1,0 +1,13 @@
+<div game-sidebar class='game-sidebar deck-sidebar-right z-depth-2'>
+
+    <div ng-repeat='card in deckEdit.cards' class='hoverable pointable' ng-click='viewCard(card)'>
+        <span ng-repeat='mana in card.cost | orderBy: mana'>
+            <ng-include src="'html/partials/Manacost.html'"></ng-include>
+        </span>
+        {{card.name}}
+    </div>
+
+</div>
+
+<ng-include src="'html/partials/DeckEditCardModal.html'"></ng-include>
+ 

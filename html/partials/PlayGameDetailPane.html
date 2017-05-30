@@ -1,0 +1,82 @@
+<div game-sidebar class='game-sidebar game-sidebar-right z-depth-2'>
+
+    <div>Stack</div>
+    <div ng-repeat='stackElement in game.stack.stackElements track by stackElement.id'>
+        {{stackElement.id}}
+    </div>
+    <div ng-show='game.stack.stackElements.length'>
+        <a href='' ng-click='resolveFirstStackElement()'>Resolves</a>
+    </div>
+
+    <div class='game-sidebar-player'>
+        <span class='right'>{{game.player.hand.cards.length}}/{{game.player.hand.max}}</span>
+        <div>Hand</div>
+    </div>
+
+
+    <!-- Phases -->
+    <div class='phase-changes' title='Upkeep' ng-show='game.currentPlayersTurn == $parent.user.uid'>
+        <span class='phase-change-container pointable hoverable' ng-click='changePhase("untap", "upkeep")'>
+            <span class='phase-change-content icon'>
+             <i class="ms ms-enchantment ms-2x"></i>
+            </span>
+        </span>
+
+        <span class='phase-change-container pointable hoverable' title="Draw" ng-click='changePhase("upkeep", "draw")'>
+            <span class='phase-change-content icon'>
+                <i class="ms ms-loyalty-up ms-loyalty-1 ms-2x"></i>
+            </span>
+        </span>
+
+        <span class='phase-change-container pointable hoverable' title="Main" ng-click='changePhase("draw", "main")'>
+            <span class='phase-change-content icon'>
+                <i class="ms ms-dfc-day ms-2x"></i>
+            </span>
+        </span>
+
+        <span class='phase-change-container pointable hoverable' title="Combat" ng-click='changePhase("main", "combat")'>
+            <span class='phase-change-content icon'>
+                <i class="ms ms-sorcery ms-2x"></i>
+            </span>
+        </span>
+
+        <span class='phase-change-container pointable hoverable' title="Declare Attackers" ng-click='changePhase("combat", "declare-attackers")'>
+            <span class='phase-change-content icon'>
+                <i class="ms ms-tap ms-2x"></i>
+            </span>
+        </span>
+
+        <span class='phase-change-container pointable hoverable' title="Declare Blockers" ng-click='changePhase("declare-attackers", "declare-blockers")'>
+            <span class='phase-change-content icon'>
+                <i class="ms ms-loyalty-down ms-2x"></i>
+            </span>
+        </span>
+        
+        <span class='phase-change-container pointable hoverable' title="Combat Damage" ng-click='changePhase("declare-blockers", "combat-damage")'>
+            <span class='phase-change-content icon'>
+                <i class="ms ms-creature ms-2x"></i>
+            </span>
+        </span>
+        
+        <span class='phase-change-container pointable hoverable' title="Postcombat Main Phase" ng-click='changePhase("combat-damage", "main2")'>
+            <span class='phase-change-content icon'>
+                <i class="ms ms-dfc-night ms-2x"></i>
+            </span>
+        </span>
+        
+        <span class='phase-change-container pointable hoverable' title="End" ng-click='changePhase("main2", "end")'>
+            <span class='phase-change-content icon'>
+                <i class="ms ms-instant ms-2x"></i>
+            </span>
+        </span>
+        
+        <span class='phase-change-container pointable hoverable' title="Cleanup" ng-click='changePhase("end", "cleanup")'>
+            <span class='phase-change-content icon'>
+                <i class="ms ms-flashback ms-2x"></i>
+            </span>
+        </span>
+
+    </div>
+
+
+</div>

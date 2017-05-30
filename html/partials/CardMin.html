@@ -1,0 +1,25 @@
+<div class='game-card-min z-depth-1 hoverable zoomable' ng-class="{'tapped': card.tapped}" ng-click="viewCard(card)">
+
+    <div class='game-card-title-min'>
+        <span class='right game-card-mana-cost-min'>
+            <span ng-repeat='mana in card.cost | orderBy: mana'>
+                <ng-include src="'html/partials/Manacost.html'"></ng-include>
+            </span>
+        </span>
+        <span>{{card.name}}</span>
+    </div>
+
+
+    <div>
+        <span ng-repeat='(type,value) in card.types'>
+            {{type}}
+        </span> -
+        <span ng-repeat="(subtype,value) in card.subtypes">
+            {{subtype}}
+        </span>
+    </div>
+
+    <div class='game-card-pt' ng-if='card.types.Creature'>
+        <span>{{card.power}}/{{card.toughness}}</span>
+    </div>
+</div>

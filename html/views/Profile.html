@@ -1,0 +1,13 @@
+<div class='container'>
+    <h2 ng-show='user.displayName'>{{user.displayName}}</h2>
+    
+    <span>
+        <h2>Decks</h2> 
+        <a class='create-new-deck' href='#/profile/{{uid}}/deck/NewDeck' ng-click='createNewDeck()'>Create New Deck</a>
+    </span>
+    <div ng-repeat='deck in user.decks'>
+        {{deck.name}}
+    </div>
+    
+    <h4>Active Games</h4>
+</div>

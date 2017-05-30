@@ -1,0 +1,23 @@
+<nav class="ow-orange">
+    <ul class='right'>
+        
+        <li><a href='#/lobby'>LOBBY</a></li>
+        
+        <li ng-hide="user.displayName">
+            <a ng-click='login()'>LOGIN</a>
+        </li>
+        <li ng-show="user.displayName">
+            <a data-activates='userDropdown' dropdown data-beloworigin='true'>{{user.displayName | uppercase}}</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Dropdown Structure -->
+<ul id='userDropdown' class='dropdown-content'>
+    <li><a ng-href='#/profile/{{user.uid}}'><span class='ow-text-brown'>PROFILE</span></a></li>
+    <li><a ng-click="logout()"><span class='ow-text-brown'>LOGOUT</span></a></li>
+</ul>
+
+<div ng-show="loading" class="progress ow-light">
+    <div class="indeterminate ow-black"></div>
+</div>

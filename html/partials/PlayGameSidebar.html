@@ -1,0 +1,59 @@
+<div game-sidebar class='game-sidebar z-depth-2'>
+
+    <div class='game-sidebar-opponent'>
+
+        <span class='right'>{{game.opponent.life}}</span>
+        <div>{{game.opponent.displayName}}</div>
+
+        <span class='right'>{{game.opponent.library.cards.length}}</span>
+        <div>Library</div>
+
+        <span class='right'>{{game.opponent.graveyard.cards.length}}</span>
+        <div>Graveyard</div>
+
+        <span class='right'>{{game.opponent.exile.cards.length}}</span>
+        <div>Exile</div>
+
+        <div>
+            <div><strong>Manapool</strong></div>
+            <span ng-repeat='mana in game.opponent.manapool.mana | orderBy: mana'>
+                <span><i class='ms ms-cost' 
+                   ng-class="getManaIcons(mana.color)">
+                </i></span>
+            </span>
+        </div>
+
+        <div ng-hide='game.opponent.uid'>No Opponent</div>
+    </div>
+
+    <!-- Spectating-->
+    <div ng-if='spectating' class='game-sidebar-player'>
+        SPECTATING
+    </div>
+
+    <!-- Player-->
+    <div ng-if='!spectating' class='game-sidebar-player'>
+
+        <div>
+            <div><strong>Manapool</strong></div>
+            <span ng-repeat='mana in game.player.manapool.mana | orderBy: mana'>
+                <span><i class='ms ms-cost' 
+                   ng-class="getManaIcons(mana.color)">
+                </i></span>
+            </span>
+        </div>
+
+        <span class='right'>{{game.player.life}}</span>
+        <div>{{game.player.displayName}}</div>
+
+        <span class='right'>{{game.player.library.cards.length}}</span>
+        <div>Library</div>
+
+        <span class='right'>{{game.player.graveyard.cards.length}}</span>
+        <div>Graveyard</div>
+
+        <span class='right'>{{game.player.exile.cards.length}}</span>
+        <div>Exile</div>
+
+    </div>
+</div>

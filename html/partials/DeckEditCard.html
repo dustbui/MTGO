@@ -1,0 +1,35 @@
+<div class='game-card z-depth-1'>
+    <div class='game-card-title'>
+        <span class='right game-card-mana-cost'>
+            <span ng-repeat='mana in card.cost | orderBy: mana'>
+                <ng-include src="'html/partials/Manacost.html'"></ng-include>
+            </span>
+        </span>
+        <span>{{card.name}}</span>
+    </div>
+
+
+    <div>
+        <span ng-repeat='(type,value) in card.types'>
+            {{type}}
+        </span> -
+        <span ng-repeat="(subtype,value) in card.subtypes">
+            {{subtype}}
+        </span>
+    </div>
+
+    <div class='game-card-text'>
+        <div class='game-card-text-passives'></div>
+
+        <div class='game-card-text-actives modal-close'>
+            <div ng-repeat='ability in card.abilities'>
+                <div><span ng-bind-html='ability.text'></span></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class='game-card-pt' ng-if='card.types.Creature'>
+        <span>{{card.power}}/{{card.toughness}}</span>
+    </div>
+
+</div>

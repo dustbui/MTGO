@@ -1,0 +1,69 @@
+<!doctype html>
+<html ng-app="ows">
+
+<head>
+
+    <!-- Mobile meta data -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0, minimum-scale=1, user-scalable=yes" />
+    <link rel="shortcut icon" href="mtgo.png">
+
+    <title>MTGO</title>
+
+    <!-- Vendors -->
+    <script src="js/vendors/jquery.min.js"></script>
+    <script src="js/vendors/jquery-ui.min.js"></script>
+    <script src="js/vendors/firebase.js"></script>
+    <script src="js/vendors/Chart.js"></script>
+    <script src="js/vendors/angular.js"></script>
+    <script src="js/vendors/angular-fire.js"></script>
+    <script src="js/vendors/angular-route.min.js"></script>
+    <script src="js/vendors/angular-animate.min.js"></script>
+    <script src="js/vendors/angular-chart.js"></script>
+    <script src="js/vendors/angular-simple-logger.js"></script>
+    <script src="js/vendors/angularjs-scroll-glue.js"></script>
+    <script src="js/vendors/lodash.js"></script>
+
+    </script>
+
+    <!-- Materialize -->
+    <script src="js/vendors/materialize.js"></script>
+
+    <!-- JS files -->
+    <script src="js/Models.js"></script>
+    <script src="js/Common.js"></script>
+    <script src="js/FirebaseServices.js"></script>
+    <script src="js/Auth.js"></script>
+    <script src="js/Main.js"></script>
+    <script src="js/Directives.js"></script>
+    
+    <!-- Data -->
+    <script src="js/Data/AbilityDefinitions.js"></script>
+    <script src="js/Data/CardDefinitions.js"></script>
+
+    <!-- View Controllers -->
+    <script src="js/controllers/GameController.js"></script>
+    <script src="js/controllers/LobbyController.js"></script>
+    <script src="js/controllers/ProfileController.js"></script>
+    <script src="js/controllers/DeckEditController.js"></script>
+
+    <!-- StyleSheets -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300italic,300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--    <link rel="stylesheet" href="//cdn.materialdesignicons.com/1.5.54/css/materialdesignicons.min.css">-->
+    <link rel="stylesheet" type="text/css" href="css/mana.css"/>
+    <link rel="stylesheet" type="text/css" href="css/materialize.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="css/angular-chart.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+</head>
+
+<body id="fb-root" class="">
+    <ng-include id='main' ng-controller="MainCtrl" src="'html/Main.html'"></ng-include>
+</body>
+
+<footer>
+</footer>
+
+
+</html>

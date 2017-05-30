@@ -1,0 +1,258 @@
+html,
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+#main {
+    height: inherit;
+}
+
+#content {
+    height: inherit;
+    margin-top: -64px;
+    padding-top: 64px;
+    overflow: hidden;
+}
+
+.pointable {
+    cursor: pointer;
+}
+
+.zoomable {
+    cursor: zoom-in;
+}
+
+.ow-orange {
+    background-color: #FAA02E;
+}
+
+.ow-light {
+    background-color: #FCBD49;
+}
+
+.ow-black {
+    background-color: #060606;
+}
+
+.ow-brown {
+    background-color: #2F2526;
+}
+
+.ow-light-brown {
+    background-color: #584F4A;
+}
+
+.ow-text-orange {
+    color: #FAA02E;
+}
+
+.ow-text-light {
+    color: #FCBD49;
+}
+
+.ow-text-black {
+    color: #060606;
+}
+
+.ow-text-brown {
+    color: #2F2526;
+}
+
+.ow-text-light-brown {
+    color: #584F4A;
+}
+
+.invalid-action {
+    color: lightgray;
+    cursor: default;
+}
+
+.game-page {
+    height: inherit;
+}
+
+.game-sidebar {
+    padding: 5px;
+    width: 200px;
+    height: 100%;
+    min-height: 400px;
+    position: absolute;
+}
+
+.game-sidebar-right {
+    min-height: 400px;
+    right: 0;
+}
+
+.deck-sidebar-right {
+    min-height: 400px;
+    right: 0;
+    width: 300px;
+}
+
+.deck-container {
+    padding-left: 20px;
+    padding-right: 320px;
+}
+
+.deck-edit-textarea {
+    height: 100px;
+    width: 250px;
+    max-width: 250px;
+    min-width: 250px;
+}
+
+.deck-edit-parse-btn {
+    width: 250px;
+}
+
+.game-sidebar-opponent {
+    top: 5px;
+    position: absolute;
+    width: inherit;
+    padding-right: 12px;
+}
+
+.game-sidebar-player {
+    bottom: 5px;
+    position: absolute;
+    width: inherit;
+    padding-right: 12px;
+}
+
+.game-area {
+    height: 100%;
+    overflow-y: scroll;
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.game-area-battlefield {
+    overflow-x: auto;
+    white-space: nowrap;
+    height: 170px
+}
+
+.game-card-min {
+    font-size: 12px;
+    width: 100px;
+    height: 150px;
+    padding: 3px;
+    background-color: white;
+    margin: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+.game-card {
+    font-size: 14px;
+    width: 250px;
+    height: 350px;
+    padding: 6px;
+    margin: 5px;
+    background-color: white;
+    position: relative;
+}
+
+.game-card-title-min {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 4px;
+}
+
+.game-card-mana-cost {
+    margin-top: -2px;
+}
+
+.game-card-mana-cost-min > span > ng-include > i {
+    margin-top: -5px;
+    font-size: 0.75em;
+}
+
+.ms-text {
+    margin-top: -3px;
+    font-size: 0.80em;
+}
+
+.game.card-actives {
+    cursor: default;
+}
+
+.game-card-cost-min {}
+
+.game-card-pt {
+    position: absolute;
+    right: 5px;
+    bottom: 2px;
+}
+
+.modal {
+    width: 260px;
+}
+
+.tapped {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -webkit-transform: rotate(90deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+
+.phase-change-container {
+    display: inline-block;
+    padding: 2px;
+    width: 35px;
+    height: 35px;
+    margin-left: 1px;
+    border: 1px solid black;
+}
+
+.phase-change-content {
+    font-size: 12px;
+}
+
+.phase-change-content > i {
+    margin-left: 4px;
+}
+
+.player-hand {
+/*    bottom: 10px;*/
+}
+
+
+/* Scrollbar */
+
+
+/* Let's get this party started */
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(252, 189, 73, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(252, 189, 73, 1);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(252, 189, 73, 0.05);
+}

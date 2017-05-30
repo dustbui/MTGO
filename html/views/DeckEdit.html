@@ -1,0 +1,17 @@
+<ng-include src="'html/partials/DeckEditDeckList.html'"></ng-include>
+<div class='deck-container'>
+    <div class='right'><a href="" ng-click='openDeckEditModal()'>SAVE</a></div>
+    <h3>Deck Editor - {{deck.name}}</h3>
+
+    <div>
+        <div>Upload via Text</div>
+        <textarea class='deck-edit-textarea' ng-model='deckEditTextArea'
+                  placeholder='4x Llanowar Elves'
+                  ></textarea>
+        <div>
+            <a class='btn teal deck-edit-parse-btn' ng-click='parseText(deckEditTextArea)'>PARSE</a>
+        </div>
+    </div>
+</div>
+
+<ng-include src="'html/partials/EditDeckModal.html'"></ng-include>

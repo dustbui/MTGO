@@ -1,0 +1,80 @@
+<div class='container'>
+    
+    <span ng-form='searchGameForm' class='right input-field'>
+        <a ng-class="{'invalid-action': (!searchGameForm.$valid || !searchInput)}"
+           class="material-icons prefix" 
+           href=''
+           ng-click='searchGame(searchInput)'>search</a>
+        <input id='game-search'
+               type='text'
+               ng-model='searchInput'
+               length='4'
+               ng-minlength='4'
+               ng-maxlength='4'
+               limit-to='4'
+               autofocus
+               allow-pattern="(\d|[a-z])"
+               />
+        <label for='game-search'>Search for game</label>
+    </span>
+    
+    <h2>LOBBY</h2>
+
+    <table class='table responsive-table bordered highlight'>
+        <thead>
+            <tr>
+                <th>Room Code</th>
+                <th>Name</th>
+                <th>Creator</th>
+                <th>Players</th>
+                <th><span class='right'>Action</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-form='createGameForm'>
+                <td input-field>
+                    <input name='id' type='text' placeholder='Room Code (i.e. A1B2)' 
+                           ng-model='createGameModel.id'
+                           required 
+                           length="4"
+                           ng-minlength="4" 
+                           ng-maxlength="4"
+                           allow-pattern="(\d|[a-z])"
+                           limit-to="4" />
+                </td>
+                <td input-field>
+                    <input name='name' type='text' placeholder="Name (64 character limit)" 
+                           ng-model='createGameModel.name' 
+                           length=64
+                           limit-to="64"
+                           ng-maxlength="64" 
+                           autocomplete="off"
+                           allow-pattern="(\d|[a-z]| )"
+                           required/>
+                </td>
+                <td> {{$parent.user.displayName}} </td>
+                <td input-field>
+<!--
+                    <input type='text' placeholder='Password (Optional, 8 character limit)'
+                           length=8
+                           limit-to="8"
+                           ng-maxlength="8"
+                           allow-pattern="(\d|[a-z_])"
+                           ng-model='createGameModel.password'
+-->
+                </td>
+                <td><a ng-class="{'invalid-action': !createGameForm.$valid}"
+                       class='right' href='' 
+                       ng-click='createGame(createGameForm.$valid)'>CREATE</a></td>
+            </tr>
+
+            <tr ng-repeat='(key, game) in games'>
+                <td>{{game.id}}</td>
+                <td>{{game.name}}</td>
+                <td>{{game.creatorName}}</td>
+                <td>{{getGamePlayerCount(game)}}</td>
+                <td><a class='right' href='' ng-click='joinGame(game.id)'>JOIN</a></td>
+            </tr>
+
+        </tbody>
+    </table>

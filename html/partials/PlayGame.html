@@ -1,0 +1,54 @@
+<!--Sidebar-->
+<ng-include src="'html/partials/PlayGameDetailPane.html'"></ng-include>
+<ng-include src="'html/partials/PlayGameSidebar.html'"></ng-include>
+
+<ng-include src="'html/partials/PlayerHand.html'"></ng-include>
+
+<div class='game-area'>
+
+    <div class='row'>
+        <div battlefield class='game-area-battlefield'>
+            <span ng-repeat='card in game.battlefield.cards'> 
+                <game-card-min card='card' view-card='viewCard' get-mana-icons='getManaIcons'
+                               ng-if='card.controller == game.opponent.uid && card.types.Land'>
+                </game-card-min>
+            </span>
+        </div>
+    </div>
+
+    <div class='row'>
+        <div battlefield class='game-area-battlefield'>
+            <span ng-repeat='card in game.battlefield.cards'> 
+                <game-card-min card='card' view-card='viewCard' get-mana-icons='getManaIcons'
+                               ng-if='card.controller == game.opponent.uid && !card.types.Land'>
+                </game-card-min>
+            </span>
+        </div>
+    </div>
+
+    <div class='row'>
+        <div battlefield class='game-area-battlefield'>
+            <span ng-repeat='card in game.battlefield.cards'> 
+                <game-card-min card='card' view-card='viewCard' get-mana-icons='getManaIcons'
+                               ng-if='card.controller == game.player.uid && !card.types.Land'>
+                </game-card-min>
+            </span>
+        </div>
+    </div>
+
+    <div class='row'>
+        <div battlefield class='game-area-battlefield'>
+            <span ng-repeat='card in game.battlefield.cards'> 
+                <game-card-min card='card' view-card='viewCard' get-mana-icons='getManaIcons'
+                               ng-if='card.controller == game.player.uid && card.types.Land'>
+                </game-card-min>
+            </span>
+        </div>
+    </div>
+
+    <!--    <game-card card='game.cardMap["llanowarElf"]' use-ability='useAbility'></game-card>-->
+
+</div>
+
+
+<ng-include src="'html/partials/CardModal.html'"></ng-include>
